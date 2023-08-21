@@ -12,6 +12,7 @@ int main()
     int a = 0;
     int i = 1;
     int o;
+
     //Interfaz para solicitar n
     interface("CALCULADORA DE LA SERIE DE FIBONACCI", "¿Cuántos términos desea obtener?");
     scanf("%i", &n);
@@ -20,7 +21,13 @@ int main()
     // Operatoria
     for(int c = 1; c <= n; c++)
     {
-        c == n ? printf("%i\n", o) : printf("%i, ", o);
+        if (c == n)
+        {
+            printf("%i\n", o);
+            break;
+        }
+        else printf("%i, ", o);
+        
         o = a + i;  // computo del siguiente número
         a = i;  // reasignación de variables para el siguiente computo
         i = o;
