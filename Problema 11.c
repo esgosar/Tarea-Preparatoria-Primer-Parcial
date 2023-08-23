@@ -59,7 +59,7 @@ int main()
             }
 
             int num = atoi(numStr); // Convertimos la cadena de caracteres auxiliar a una matriz de núemros.
-            nums[index++] = num;
+            nums[index++] = num; // Asignación continua
         }
         else if (text[i] == '[' || text[i] == ',' || text[i] == ' ' || text[i] == ']') i++; // En caso de caracteres especiales omitir.
         else // Manejo de inputs erroneos.

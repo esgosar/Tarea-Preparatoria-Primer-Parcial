@@ -1,38 +1,10 @@
 /**
-- El usuario elije la operación de forma explícita
-- El programa recibe n cantidad de números enteros por entrada estándar
-- El programa da el resultado de la operación
+    • El usuario elije la operación de forma explícita
+    • El programa recibe n cantidad de números enteros por entrada estándar
+    • El programa da el resultado de la operación
 */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <unistd.h>
-
-
-int operate(int *operands, int operation, int n)
-{
-    int result = operands[0]; 
-
-    if (operation == 1) for (int i = 1; i <= n; i++) result += operands[i];
-    else
-    {
-        for (int i = 1; i <= n; i++)
-        {
-            if (i == 1) result = operands[i];
-            else result -= operands[i];
-        }
-    }
-
-    return result;
-}
-
-
-void clean()
-{
-    sleep(2);
-    system("clear");
-}
-
+#import "Header.h"
 
 int main()
 {
@@ -40,7 +12,7 @@ int main()
     int *operands = (int *)malloc(n * sizeof(int));
     int operation = 0;
 
-    system("clear");
+    clean(1);
 
     // Interfaz para elección de la operación a realizar
     while (operation != 1 || operation != 2)
@@ -53,13 +25,13 @@ int main()
 
         if (operation == 1 || operation == 2)
         {
-            clean();
+            clean(1);
             break;
         }
         else 
         {
             printf("\nError: Escriba 1 para sumar o 2 para restar.\n");
-            clean();
+            clean(1);
         }
     }
 
@@ -72,13 +44,13 @@ int main()
 
         if (n >= 2)
         {
-            clean();
+            clean(1);
             break;
         }
         else
         {
             printf("\nError: Se requieren 2 operandos o más.\n");
-            clean();
+            clean(1);
         }
     }
     
@@ -93,16 +65,25 @@ int main()
             scanf("%i", &operands[i]);
         }
 
-        clean();
+        clean(1);
         break;
     }
 
-    printf("El resultado es: %i \n", operate(operands, operation, n));
-    clean();
+    // Operatoria
+    int result = operands[0]; 
+
+    if (operation == 1) for (int i = 1; i <= n; i++) result += operands[i];
+    else
+    {
+        for (int i = 1; i <= n; i++)
+        {
+            if (i == 1) result = operands[i];
+            else result -= operands[i];
+        }
+    }
+
+    printf("El resultado es: %i \n", result);
+    clean(1);
 
     return 0;
 }
-
-// Headers
-// Manejo de error
-// Testing

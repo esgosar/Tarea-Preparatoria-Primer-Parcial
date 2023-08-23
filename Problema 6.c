@@ -49,6 +49,5 @@ int main()
     printf("Hay %i números pares.\n", counter);
     clean(3);
 
-
     return 0;
 }

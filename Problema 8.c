@@ -1,7 +1,7 @@
 /*
     • El usuario ingresa una cadena de texto
     • El programa duplica cada caracter de la cadena
-    • El progrma muestra la cadena de texto modificada
+    • El programa muestra la cadena de texto modificada
 */
 
 #import "Header.h"
